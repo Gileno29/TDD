@@ -1,4 +1,3 @@
-from cgi import test
 from select import select
 from django.test import LiveServerTestCase
 from selenium import webdriver
