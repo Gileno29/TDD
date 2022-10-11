@@ -17,7 +17,10 @@ class AnimaisTestCase(LiveServerTestCase):
         self.browser.get(self.live_server_url + '/')
         brand_element  = self.browser.find_element_by_css_selector('.navbar')
         self.assertEqual('Busca Animal', brand_element.text)
-        pass
+        
+        buscar_animal_input= self.browser.find_element_by_css_selector('input#buscar-animal')
+        self.assertEqual(buscar_animal_input.get_attribute('placeholder'), 'Exemplo: leão') 
+       
 
     
     #find_element(By.CSS_SELECTOR, 'exemplo')
