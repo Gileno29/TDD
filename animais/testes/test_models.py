@@ -11,6 +11,7 @@ class AnimalModelTestCase(TestCase):
             domestico='Não'
         )
 
+    #this is a unit test
     def test_animal_cadastrado_com_caracteristicas(self):
-        """Teste que verifica se o animal está cadstrado com suas respectivas caracteristicas"""
+        """Teste que verifica se o animal está cadastrado com suas respectivas caracteristicas"""
         self.assertEqual(self.animal.nome_animal,'Leão')
