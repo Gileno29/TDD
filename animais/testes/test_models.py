@@ -15,3 +15,4 @@ class AnimalModelTestCase(TestCase):
     def test_animal_cadastrado_com_caracteristicas(self):
         """Teste que verifica se o animal está cadastrado com suas respectivas caracteristicas"""
         self.assertEqual(self.animal.nome_animal,'Leão')
+        self.assertEqual(self.animal.predador, 'Sim')

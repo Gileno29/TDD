@@ -1,4 +1,4 @@
-#!/home/gileno/Documents/estudando/TDD/TDDenv/bin/python3
+#!/home/gileno/Documents/estudando/TDD/TDDenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

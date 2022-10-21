@@ -2,6 +2,7 @@ from select import select
 from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from animais.models import Animal
 import time
 
 
@@ -14,6 +15,13 @@ import time
 class AnimaisTestCase(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Chrome("/home/gileno/Documents/estudando/TDD/chromedriver")
+        self.animal= Animal.objects.create(
+            nome_animal='leão',
+            predador='Sim',
+            venenoso='Não',
+            domestico='Não'
+        )
+        
     def tearDown(self):
         self.browser.quit()
   
@@ -24,23 +32,23 @@ class AnimaisTestCase(LiveServerTestCase):
         """
 
         self.browser.get(self.live_server_url + '/')
-        brand_element  = self.browser.find_element_by_css_selector('.navbar')
+        brand_element  = self.browser.find_element('css selector','.navbar')
         self.assertEqual('Busca Animal', brand_element.text)
         
 
 
-        buscar_animal_input= self.browser.find_element_by_css_selector('input#buscar-animal')
+        buscar_animal_input= self.browser.find_element('css selector','input#buscar-animal')
         self.assertEqual(buscar_animal_input.get_attribute('placeholder'), 'Exemplo: leão') 
        
 
        #Ele pesquisa por Leão e clica no botão pesquisar
         buscar_animal_input.send_keys('leão')
         time.sleep(2)
-        self.browser.find_element_by_css_selector('form button').click()
+        self.browser.find_element('css selector', 'form button').click()
         time.sleep(2)
 
         #O site exibe 4 caracteristicas do animal pesquisado.
-        caracteristicas = self.browser.find_elements_by_css_selector(".result-description")
+        caracteristicas = self.browser.find_elements('css selector',".result-description")
         self.assertGreater(len(caracteristicas), 3)
 
         #Ele desiste de adotar um leão
