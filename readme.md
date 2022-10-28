@@ -7,13 +7,21 @@
  - Django
  - Django test framework
  - HTML 
+ - Selenium 
 
 # WHAT IS SOFTWARE TESTING ?
 ### exists distinct types of software testing, in this project are adopted two of them, they are unit test and functional test
 
 ## UNIT TEST
 #
-### An unit test is an test 
-
+### An unit test is the entire test application in the input and output signatures of a system. It consists of validand invalid data via I/O (input/output) being applied by developers or test analysts.
 
 ## FUNCTIONAL TEST
+### Functional testing is a quality assurance process and a type of black box test that bases your test cases on the specifications of the software component under test.
+
+## REQUISITS
+ - Python
+ - VitualEnv
+ - Django 3
+ - Selenium
+
