@@ -25,3 +25,21 @@
  - Django 3
  - Selenium
 
+# USAGE 
+
+~~~python
+   source ./TDDenv/bin/activate 
+
+   python -m pip install django 
+
+   python -m pip install selenium
+~~~
+
+for use the test framwork from django we need import  ``` TestCase``` class.
+~~~ pythonn
+from django.test import TestCase
+~~~
+
+in this project also use the ```RequestFactory``` class for simulate the resquests.
+
+
